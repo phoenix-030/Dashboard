@@ -1,0 +1,100 @@
+/* Responsive Design Styles */
+
+/* Mobile-first approach */
+@media (max-width: 768px) {
+  .container-lg {
+    padding: 0 15px;
+  }
+  
+  .btn {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+  
+  .card {
+    margin: 10px 0;
+  }
+  
+  .table-responsive {
+    font-size: 12px;
+  }
+  
+  .form-control {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar-brand {
+    font-size: 18px;
+  }
+  
+  .btn {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+  
+  .card-body {
+    padding: 15px;
+  }
+  
+  .table {
+    font-size: 12px;
+  }
+  
+  th, td {
+    padding: 8px 4px;
+    font-size: 11px;
+  }
+}
+
+/* Tablet styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container-lg {
+    padding: 0 20px;
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 1025px) {
+  .container-lg {
+    padding: 0 40px;
+  }
+  
+  .card {
+    margin: 20px 0;
+  }
+}
+
+/* Utility classes */
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mobile-only {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-only {
+    display: block;
+  }
+}
+
+.desktop-only {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .desktop-only {
+    display: none;
+  }
+}
