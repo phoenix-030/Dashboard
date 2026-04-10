@@ -18,6 +18,7 @@ const NavBar = ({ activeTab, onTabChange, onLogout }) => {
         <h2 className="navbar-brand mb-0">Expenses Tracker</h2>
         
         <div className="navbar-nav ms-auto d-lg-flex gap-2 flex-wrap justify-content-end align-items-center">
+          
             {tabs.map(tab => (
               <button key={tab.id} onClick={() => onTabChange(tab.id)} className={`btn ${activeTab === tab.id ? 'btn-primary' : 'btn-outline-secondary'} nav-item`}>
                 {tab.label}

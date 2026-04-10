@@ -78,7 +78,7 @@ const DashboardPage = () => {
       }
       return false;
     } catch (_err) {
-      // For demo purposes, add to local state if API fails
+      // For demo purposes, add to local state if api fails
       const recordWithUser = {
         ...newData,
         userId: user?.userId || user?.id

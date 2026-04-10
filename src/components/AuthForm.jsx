@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { useAuth } from '../auth/AuthContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
 const AuthForm = () => {
   const navigate = useNavigate();
@@ -15,6 +16,7 @@ const AuthForm = () => {
   });
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   const { login, signUp } = useAuth();
 
@@ -37,10 +39,8 @@ const AuthForm = () => {
           setError(result.error);
           toast.error(result.error || 'Login failed');
         } else {
-          toast.success('Login successful! Redirecting to dashboard...');
-          setTimeout(() => {
-            navigate('/dashboard');
-          }, 1000);
+          toast.success('Login successful!');
+          navigate('/dashboard', { replace: true });
         }
       } else {
         // Validate form
@@ -89,9 +89,10 @@ const AuthForm = () => {
     }
   };
 
-  const toggleMode = () => {setIsLogin(!isLogin); 
-       setError('');    
-       setFormData({
+  const toggleMode = () => {
+    setIsLogin(!isLogin);
+    setError('');
+    setFormData({
       name: '',
       email: '',
       password: '',
@@ -113,7 +114,7 @@ const AuthForm = () => {
           <form onSubmit={handleSubmit}>
             {!isLogin && (
               <div className="mb-3">
-                <label className="form-labe text-black bolderl p-2">Name</label>
+                <label className="form-label text-black bolder p-2">Name</label>
                 <input type="text" name="name" value={formData.name} onChange={handleChange} className="form-control" placeholder="Enter your name" />
               </div>
             )}
@@ -125,7 +126,12 @@ const AuthForm = () => {
             
             <div className="mb-3">
               <label className="form-label text-black bolder">Password</label>
-              <input type="password" name="password" value={formData.password} onChange={handleChange} className="form-control" placeholder="Enter your password" required />
+              <div className="input-group">
+                <input type={showPassword ? "text" : "password"} name="password" value={formData.password} onChange={handleChange} className="form-control" placeholder="Enter your password" required />
+                <button type="button" className="btn btn-outline-secondary" onClick={() => setShowPassword(!showPassword)}>
+                  <i className={`bi ${showPassword ? 'bi-eye-slash' : 'bi-eye'}`}></i>
+                </button>
+              </div>
             </div>
             
 
@@ -133,7 +139,14 @@ const AuthForm = () => {
             {!isLogin && (
               <div className="mb-3">
                 <label className="form-label text-black bolder ">Confirm Password</label>
-                <input type="password" name="confirmPassword" value={formData.confirmPassword} onChange={handleChange} className="form-control" placeholder="Confirm your password" required />
+                <div className="input-group">
+                  <input type={showPassword ? "text" : "password"} name="confirmPassword" value={formData.confirmPassword} onChange={handleChange} className="form-control" placeholder="Confirm your password" required />
+                  <button type="button" className="btn btn-outline-secondary" onClick={() => setShowPassword(!showPassword)}>
+                    {/* eye */}
+                    
+                    <i className={`bi ${showPassword ? 'bi-eye-slash' : 'bi-eye'}`}></i>   
+                  </button>
+                </div>
               </div>
             )}
             

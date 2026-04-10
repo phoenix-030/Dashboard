@@ -162,6 +162,46 @@
       "createdAt": "2026-04-09T14:05:54.283Z",
       "userId": "913eca47-9c98-4817-aceb-b9bac16e51bc",
       "id": "vSrEKwcywsw"
+    },
+    {
+      "name": "chapathi",
+      "category": "Entertainment",
+      "price": 2132,
+      "date": "2026-04-09",
+      "serialNo": "2",
+      "createdAt": "2026-04-09T14:42:39.928Z",
+      "userId": "25ee0b64-1f6e-4429-ae54-1f8c85f7ddfc",
+      "id": "AA1hIOfe1Wk"
+    },
+    {
+      "name": "Idli",
+      "category": "Food",
+      "price": 35,
+      "date": "2026-04-10",
+      "serialNo": "1",
+      "createdAt": "2026-04-10T04:11:09.944Z",
+      "userId": "4fcf5904-64c9-45c4-b7e6-4ca80c8566c9",
+      "id": "cK5Fy9M86Ww"
+    },
+    {
+      "name": "iphone",
+      "category": "Mobile",
+      "price": 95000,
+      "date": "2026-04-10",
+      "serialNo": "2",
+      "createdAt": "2026-04-10T04:14:16.243Z",
+      "userId": "4fcf5904-64c9-45c4-b7e6-4ca80c8566c9",
+      "id": "JZBCPVH3hXU"
+    },
+    {
+      "name": "Car",
+      "category": "Transportation",
+      "price": 150000,
+      "date": "2026-01-12",
+      "serialNo": "3",
+      "createdAt": "2026-04-10T04:14:52.902Z",
+      "userId": "4fcf5904-64c9-45c4-b7e6-4ca80c8566c9",
+      "id": "ndAaS5CJNpE"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

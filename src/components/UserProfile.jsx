@@ -153,7 +153,7 @@ const UserProfile = ({ initialSection = 'profile' }) => {
         setError('User not found');
         toast.error('User not found');
       }
-    } catch (err) {
+    } catch (error) {
       setError('Failed to update password');
       toast.error('Failed to update password');
     } finally {
@@ -175,12 +175,16 @@ const UserProfile = ({ initialSection = 'profile' }) => {
                 >
                   Profile Information
                 </button>
-                <button
-                  className={`list-group-item list-group-item-action ${activeSection === 'security' ? 'active' : ''}`}
-                  onClick={() => setActiveSection('security')}
-                >
-                  Security
+
+
+                {/* security option */}
+                <button className={`list-group-item list-group-item-action ${activeSection === 'security' ? 'active' : ''}`} onClick={() => setActiveSection('security')}>
+                                        Security
                 </button>
+
+
+
+
               </div>
             </div>
           </div>

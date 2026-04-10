@@ -130,6 +130,7 @@ const AddDataForm = ({ onAddData }) => {
                   <option value="Cosmetics">Cosmetics</option>
                   <option value="Furniture">Furniture</option>
                   <option value="Books">Books</option>
+                  <option value="Mobile">Mobile</option>
                   <option value="Toys">Toys</option>
                   <option value="Sports">Sports</option>
                   <option value="Health">Health</option>
