@@ -7,11 +7,10 @@ const NavBar = ({ activeTab, onTabChange, onLogout }) => {
   const { isDarkMode, toggleTheme } = useTheme();
   
   const tabs = [
-    { id: 'table', label: 'Table', icon: '' },
-    { id: 'add', label: 'Add Item', icon: '' },
-    { id: 'chart', label: 'Chart', icon: '' }
-  ];
-
+    { id: 'table', label: 'Table'},
+   { id: 'add', label: 'Add Item' },
+    { id: 'chart', label: 'Chart'}
+  ]
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top">
       <div className="container-lg">
@@ -25,7 +24,7 @@ const NavBar = ({ activeTab, onTabChange, onLogout }) => {
               </button>
             ))}
           
-          {/* Dark Mode Toggle */}
+          {/*  DARRK AND LIGHT Mode Toggle */}
           <button
             onClick={toggleTheme}
             className={`btn ${isDarkMode ? 'btn-dark' : 'btn-outline-dark'} ms-2`}

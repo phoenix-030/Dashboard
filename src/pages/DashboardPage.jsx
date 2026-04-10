@@ -37,7 +37,6 @@ const DashboardPage = () => {
       
       setData(response.data || []);
       if (showNotifications) {
-        // Clear any existing toasts to prevent duplicates
         toast.dismiss();
         if (response.data && response.data.length > 0) {
           toast.success(`Loaded ${response.data.length} records successfully!`);
@@ -98,7 +97,6 @@ const DashboardPage = () => {
     try {
       const response = await apiClient.delete(`/records/${itemToDelete.id}`);
       if (response.data) {
-        // Refresh data without showing notification
         await fetchData(false);
         toast.dismiss();
         toast.success('Record deleted successfully!');
@@ -121,15 +119,15 @@ const DashboardPage = () => {
       fetchData(true);
       hasInitiallyLoaded.current = true;
     } else if (shouldFetch && !isInitialLoad) {
-      // Fetch data without notifications for subsequent table visits
       fetchData(false);
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeTab, isAddingData]);
 
+
   return (
     <div className="min-vh-100 bg-light">
-      {/* Navigation */}
+      {/* navbar */}
       <NavBar activeTab={activeTab} onTabChange={handleTabChange} onLogout={logout} />
       
 

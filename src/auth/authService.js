@@ -5,40 +5,40 @@ const storage = {
 
 export const authService = {
 
-  // Get all users from localStorage
+  // get all users from localStorage
   getUsers() {
     const users = localStorage.getItem(storage.USERS);
     return users ? JSON.parse(users) : [];
   },
 
-  // Save users to localStorage
+  // save users to localstorage
   saveUsers(users) {
     localStorage.setItem(storage.USERS, JSON.stringify(users));
   },
 
-  // Get current session (FROM sessionStorage)
+  // gett current session (FRoOM sessionstorage)
   getSession() {
     const session = sessionStorage.getItem(storage.SESSION);
     return session ? JSON.parse(session) : null;
   },
 
-  // Save session (TO sessionStorage)
+  // save session (TO sessionstorage)
   saveSession(session) {
     sessionStorage.setItem(storage.SESSION, JSON.stringify(session));
   },
 
-  // Clear session when logout
+  // clear session when logout
   clearSession() {
     sessionStorage.removeItem(storage.SESSION);
   },
 
-  // Check authentication
+  // check authentication
   isAuthenticated() {
     const session = this.getSession();
     return session && session.isAuthenticated === true;
   },
 
-  // Signup new user
+  // cignup new user
   signUp(name, email, password) {
     const users = this.getUsers();
 

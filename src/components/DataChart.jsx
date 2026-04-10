@@ -53,7 +53,7 @@ const DataChart = ({ data }) => {
       value: parseFloat(item.price || item.value || 0)
     }));
 
-  // Aggregate data by month
+  // month
   const monthlyData = dateValues.reduce((acc, item) => {
     const monthKey = item.month; // YYYY-MM format
     if (!acc[monthKey]) {
@@ -70,11 +70,11 @@ const DataChart = ({ data }) => {
     return acc;
   }, {});
 
-  // Convert to array and sort by month
+  // sort by month
   const sortedMonthlyData = Object.values(monthlyData)
     .sort((a, b) => new Date(a.month) - new Date(b.month));
 
-  // Bar chart data for category totals
+  //  category OF BAR
   const barChartData = {
     labels: Object.keys(categoryTotals),
     datasets: [{
@@ -100,7 +100,7 @@ const DataChart = ({ data }) => {
     }],
   };
 
-  // Line chart data for values over time
+  // Line chart
   const lineChartData = {
     labels: sortedMonthlyData.map(item => item.date),
     datasets: [{
